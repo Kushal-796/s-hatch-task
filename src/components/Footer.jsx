@@ -121,15 +121,15 @@ const Footer = () => {
                 <div className="space-y-3 text-sm text-white-smoke/70">
                   <div className="flex items-center space-x-3">
                     <MapPin className="w-4 h-4 text-sky-blue" />
-                    <span>San Francisco, CA</span>
+                    <span>Hyderabad, Telangana, India</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="w-4 h-4 text-sky-blue" />
-                    <span>hello@launchflow.app</span>
+                    <span>kushal.vakada@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="w-4 h-4 text-sky-blue" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+91 94943 52425</span>
                   </div>
                 </div>
 
