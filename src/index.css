@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0F0F1B;
+  color: #F2F2F2;
+  overflow-x: hidden;
+}
+
+/* Custom Components */
+@layer components {
+  .btn-primary {
+    @apply bg-sky-blue hover:bg-hover-blue text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-sky-blue/25;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-neon-pink text-neon-pink hover:bg-neon-pink hover:text-deep-night font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .card-glow {
+    @apply bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl shadow-xl;
+    box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
+  }
+  
+  .card-glow:hover {
+    @apply border-sky-blue/50;
+    box-shadow: 0 12px 40px rgba(56, 189, 248, 0.2);
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-sky-blue to-neon-pink bg-clip-text text-transparent;
+  }
+  
+  .hero-gradient {
+    background: radial-gradient(ellipse at top, rgba(56, 189, 248, 0.1) 0%, transparent 70%),
+                radial-gradient(ellipse at bottom, rgba(244, 114, 182, 0.1) 0%, transparent 70%);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0F1B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38BDF8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* Animation delays for staggered effects */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Particle animation background */
+.particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(56, 189, 248, 0.4);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+  width: 4px;
+  height: 4px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  width: 6px;
+  height: 6px;
+  top: 80%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+  width: 3px;
+  height: 3px;
+  top: 40%;
+  left: 80%;
+  animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+  width: 5px;
+  height: 5px;
+  top: 60%;
+  left: 70%;
+  animation-delay: 1s;
+}
+
+.particle:nth-child(5) {
+  width: 4px;
+  height: 4px;
+  top: 10%;
+  left: 90%;
+  animation-delay: 3s;
+}

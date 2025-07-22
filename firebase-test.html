@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Auth Test</title>
+</head>
+<body>
+    <h1>Firebase Test</h1>
+    <button id="testBtn">Test Firebase Connection</button>
+    <div id="result"></div>
+    
+    <script type="module">
+        // Test Firebase configuration
+        console.log('Environment variables:');
+        console.log('API Key:', 'AIzaSyAe6RhrrEauuPpoj1TWB2qO1I82Mj6WhyU');
+        console.log('Auth Domain:', 'fir-hatch.firebaseapp.com');
+        console.log('Project ID:', 'fir-hatch');
+        
+        // Import Firebase
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyAe6RhrrEauuPpoj1TWB2qO1I82Mj6WhyU",
+            authDomain: "fir-hatch.firebaseapp.com",
+            projectId: "fir-hatch",
+            storageBucket: "fir-hatch.firebasestorage.app",
+            messagingSenderId: "462324322397",
+            appId: "1:462324322397:web:34bde78095c4bf96437db4"
+        };
+        
+        try {
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getFirestore(app);
+            
+            document.getElementById('result').innerHTML = 'Firebase initialized successfully!';
+            
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    document.getElementById('result').innerHTML += '<br>User signed in: ' + user.email;
+                } else {
+                    document.getElementById('result').innerHTML += '<br>No user signed in';
+                }
+            });
+            
+        } catch (error) {
+            document.getElementById('result').innerHTML = 'Firebase error: ' + error.message;
+            console.error('Firebase error:', error);
+        }
+    </script>
+</body>
+</html>
